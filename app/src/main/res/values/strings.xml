@@ -1,0 +1,11 @@
+<resources>
+    <string name="app_name">Tutor Scheduling</string>
+    <string name="new_customer">New Customer</string>
+    <string name="existing_customer">Existing Customer</string>
+    <string name="logged_in">Logged in: JDOE</string>
+    <string name="new_session">Schedule New Session</string>
+    <string name="upcoming_session">View Upcoming Sessions</string>
+    <string name="logout_now">Log Out</string>
+    <string name="new_name">Enter Name</string>
+
+</resources>
