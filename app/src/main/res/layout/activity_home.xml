@@ -4,15 +4,26 @@
     android:gravity="center"
     android:orientation="vertical">
 
-    <TextView
+
+    <fragment
+        android:id="@+id/fragment"
+        android:name="com.cop2660.android.tutorsessions.GuestFragment"
         android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text= "@string/logged_in" />
+        android:layout_height="wrap_content" />
+
     <Button
-        android:id="@+id/logout_now"
-        android:layout_width="wrap_content"
+        android:id="@+id/login_btn"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text= "@string/logout_now"/>
+        android:onClick="selectFrag"
+        android:text="@string/login_now" />
+
+    <Button
+        android:id="@+id/logout_btn"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:onClick="selectFrag"
+        android:text="@string/logout_now" />
 
     <LinearLayout
     android:layout_width="match_parent"

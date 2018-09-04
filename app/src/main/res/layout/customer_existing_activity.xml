@@ -11,117 +11,124 @@
         android:layout_width="178dp"
         android:layout_height="167dp"
         android:layout_marginStart="16dp"
-        android:layout_marginTop="16dp"
-        android:text="Tap to Add Image"
+        android:layout_marginTop="28dp"
+        android:text="(Current Customer Image)"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
     <TextView
         android:id="@+id/newNameText"
-        android:layout_width="157dp"
-        android:layout_height="32dp"
-        android:layout_marginBottom="8dp"
+        android:layout_width="wrap_content"
+        android:layout_height="23dp"
         android:layout_marginEnd="40dp"
         android:layout_marginStart="8dp"
-        android:layout_marginTop="16dp"
+        android:layout_marginTop="44dp"
         android:ems="10"
         android:gravity="center"
         android:hint="Enter Name"
         android:inputType="textPersonName"
-        app:layout_constraintBottom_toTopOf="@+id/textView"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.968"
-        app:layout_constraintStart_toEndOf="@+id/button"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.0" />
-
-    <TextView
-        android:id="@+id/textView"
-        android:layout_width="148dp"
-        android:layout_height="29dp"
-        android:layout_marginEnd="44dp"
-        android:layout_marginStart="8dp"
-        android:layout_marginTop="60dp"
-        android:gravity="center"
-        android:text="Phone Number"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="1.0"
         app:layout_constraintStart_toEndOf="@+id/newImgButton"
         app:layout_constraintTop_toTopOf="parent" />
 
     <TextView
+        android:id="@+id/textView"
+        android:layout_width="176dp"
+        android:layout_height="29dp"
+        android:layout_marginEnd="44dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="8dp"
+        android:gravity="center"
+        android:text="Phone Number"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toEndOf="@+id/newImgButton"
+        app:layout_constraintTop_toBottomOf="@+id/newNameText" />
+
+    <TextView
         android:id="@+id/newEmail"
-        android:layout_width="207dp"
-        android:layout_height="32dp"
-        android:layout_marginEnd="4dp"
-        android:layout_marginTop="100dp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="32dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="8dp"
         android:ems="10"
         android:gravity="center"
         android:hint="Enter Email Address"
         android:inputType="textPersonName"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintStart_toEndOf="@+id/newImgButton"
+        app:layout_constraintTop_toBottomOf="@+id/textView" />
 
     <TextView
         android:id="@+id/editText4"
-        android:layout_width="200dp"
-        android:layout_height="38dp"
-        android:layout_marginBottom="408dp"
-        android:layout_marginEnd="8dp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="32dp"
+        android:layout_marginStart="8dp"
         android:layout_marginTop="8dp"
         android:ems="10"
         android:gravity="center"
         android:hint="Enter Street Address"
         android:inputType="textPersonName"
-        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/newEmail"
-        app:layout_constraintVertical_bias="0.13" />
+        app:layout_constraintStart_toEndOf="@+id/newImgButton"
+        app:layout_constraintTop_toBottomOf="@+id/newEmail" />
 
     <TextView
         android:id="@+id/editText5"
-        android:layout_width="160dp"
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginBottom="368dp"
-        android:layout_marginStart="216dp"
+        android:layout_marginEnd="8dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="4dp"
         android:ems="10"
         android:gravity="center"
         android:hint="Zip Code"
         android:inputType="textPostalAddress"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintStart_toStartOf="parent" />
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.06"
+        app:layout_constraintStart_toEndOf="@+id/newImgButton"
+        app:layout_constraintTop_toBottomOf="@+id/editText6" />
 
     <TextView
         android:id="@+id/editText6"
-        android:layout_width="174dp"
-        android:layout_height="18dp"
-        android:layout_marginBottom="396dp"
-        android:layout_marginEnd="32dp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="20dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="8dp"
         android:ems="10"
         android:gravity="center"
         android:hint="City"
         android:inputType="textPersonName"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent" />
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.095"
+        app:layout_constraintStart_toEndOf="@+id/newImgButton"
+        app:layout_constraintTop_toBottomOf="@+id/editText4" />
 
     <TextView
         android:id="@+id/editText7"
         android:layout_width="wrap_content"
-        android:layout_height="20dp"
-        android:layout_marginBottom="340dp"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="8dp"
         android:layout_marginEnd="8dp"
         android:layout_marginStart="8dp"
+        android:layout_marginTop="8dp"
         android:ems="10"
         android:gravity="center"
         android:hint="State"
         android:inputType="textPersonName"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.907"
-        app:layout_constraintStart_toStartOf="parent" />
+        app:layout_constraintHorizontal_bias="0.06"
+        app:layout_constraintStart_toEndOf="@+id/newImgButton"
+        app:layout_constraintTop_toBottomOf="@+id/editText5"
+        app:layout_constraintVertical_bias="0.019" />
 
     <Button
-        android:id="@+id/button"
+        android:id="@+id/new_session_screen"
         android:layout_width="320dp"
         android:layout_height="wrap_content"
         android:layout_marginBottom="8dp"
@@ -136,7 +143,7 @@
         app:layout_constraintVertical_bias="0.53" />
 
     <Button
-        android:id="@+id/button2"
+        android:id="@+id/view_upcoming"
         android:layout_width="320dp"
         android:layout_height="wrap_content"
         android:layout_marginBottom="8dp"
@@ -191,4 +198,15 @@
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent" />
+
+    <fragment
+        android:id="@+id/fragment"
+        android:name="com.cop2660.android.tutorsessions.UserFragment"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="8dp"
+        android:layout_marginStart="8dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
 </android.support.constraint.ConstraintLayout>

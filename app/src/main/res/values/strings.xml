@@ -6,6 +6,11 @@
     <string name="new_session">Schedule New Session</string>
     <string name="upcoming_session">View Upcoming Sessions</string>
     <string name="logout_now">Log Out</string>
+    <string name="login_now">Log In</string>
     <string name="new_name">Enter Name</string>
+    <string name="guest_login">Guest</string>
+    <string name="title_activity_sessions">Sessions</string>
+    <string name="action_settings">Settings</string>
+
 
 </resources>

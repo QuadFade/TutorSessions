@@ -18,7 +18,12 @@
         </activity>
         <activity android:name=".NewCustomer" />
         <activity android:name=".ExistingCustomer" />
-        <activity android:name=".NewBilling"></activity>
+        <activity android:name=".NewBilling" />
+        <activity
+            android:name=".UpcomingSessions"
+            android:label="Upcoming Sessions"
+            android:theme="@style/AppTheme.NoActionBar" />
+        <activity android:name=".NewSession"></activity>
     </application>
 
 </manifest>
