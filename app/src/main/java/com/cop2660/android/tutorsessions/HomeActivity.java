@@ -7,8 +7,16 @@ import android.support.v4.app.FragmentTransaction;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.support.v4.app.FragmentActivity;
+import android.view.Menu;
+import android.view.MenuInflater;
+import android.view.MenuItem;
 import android.view.View;
 import android.widget.Button;
+import android.widget.EditText;
+import android.widget.TextView;
+import android.widget.Toast;
+
+import java.util.concurrent.Delayed;
 
 
 public class HomeActivity extends AppCompatActivity {
@@ -21,6 +29,10 @@ public class HomeActivity extends AppCompatActivity {
     private Button mLogoutbtn;
     private Fragment mNewCustomerFrag;
 
+
+
+    private TextView mEmail;
+
     //private TextView mFrag;
 
     //private Button mLogout;
@@ -30,12 +42,18 @@ public class HomeActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_home);
+        setHasOptionsMenu(true);
+        TextView e = (TextView) findViewById(R.id.email_address);
+        Bundle bu;
+        bu = getIntent().getExtras();
+        e.setText(bu.getString("emailReci"));
+
         mNewCustomer = (Button) findViewById(R.id.new_customer);
         mExistingCustomer = (Button) findViewById(R.id.existing_customer);
         mNewSession = (Button) findViewById(R.id.new_session);
         mUpcomingSession = (Button) findViewById(R.id.upcoming_session);
-        mLoginbtn = (Button) findViewById(R.id.login_btn);
-        mLogoutbtn = (Button) findViewById(R.id.logout_btn);
+
+
 
         mNewCustomer.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -72,22 +90,48 @@ public class HomeActivity extends AppCompatActivity {
             }
         });
 
+
+
+
         }
 
-    public void selectFrag (View view){
-        Fragment fr = new Fragment();
-        if (view == findViewById(R.id.login_btn))
-            fr = new UserFragment();
-        else if (view == findViewById(R.id.logout_btn))
-            fr = new GuestFragment();
+    @Override
+    protected void onResume() {
+        super.onResume();
+        setHasOptionsMenu(true);
+        TextView e = (TextView) findViewById(R.id.email_address);
+        Bundle bu;
+        bu = getIntent().getExtras();
+        e.setText(bu.getString("emailReci"));
+    }
+
+    private void setHasOptionsMenu(boolean b) {
 
 
-        FragmentManager manager = getSupportFragmentManager();
-        FragmentTransaction transaction = manager.beginTransaction();
-        transaction.replace(R.id.fragment, fr);
-        transaction.commit();
 
     }
 
 
-}
+    public boolean onCreateOptionsMenu(Menu menu){
+        MenuInflater inflater = getMenuInflater();
+        inflater.inflate(R.menu.activity_home, menu);
+        return true;
+    }
+
+    public boolean onOptionsItemSelected(MenuItem item){
+        switch (item.getItemId()) {
+            case R.id.logout_option:
+                Toast.makeText(this, "Logging You Off", Toast.LENGTH_SHORT).show();
+                startActivity(new Intent(this, LoginActivity.class));
+                return true;
+                default:
+                    return super.onOptionsItemSelected(item);
+
+        }
+    }
+
+    }
+
+
+
+
