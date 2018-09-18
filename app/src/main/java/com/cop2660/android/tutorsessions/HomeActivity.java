@@ -1,6 +1,7 @@
 package com.cop2660.android.tutorsessions;
 
 import android.content.Intent;
+import android.database.Cursor;
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentManager;
 import android.support.v4.app.FragmentTransaction;
@@ -16,6 +17,8 @@ import android.widget.EditText;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import com.cop2660.android.tutorsessions.database.DatabaseHelper;
+
 import java.util.concurrent.Delayed;
 
 
@@ -28,6 +31,7 @@ public class HomeActivity extends AppCompatActivity {
     private Button mLoginbtn;
     private Button mLogoutbtn;
     private Fragment mNewCustomerFrag;
+    DatabaseHelper customerDBView;
 
 
 
@@ -48,6 +52,8 @@ public class HomeActivity extends AppCompatActivity {
         bu = getIntent().getExtras();
         e.setText(bu.getString("emailReci"));
 
+
+        customerDBView = new DatabaseHelper(this);
         mNewCustomer = (Button) findViewById(R.id.new_customer);
         mExistingCustomer = (Button) findViewById(R.id.existing_customer);
         mNewSession = (Button) findViewById(R.id.new_session);
@@ -67,6 +73,15 @@ public class HomeActivity extends AppCompatActivity {
         mExistingCustomer.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+                Cursor result = customerDBView.getAllData();
+                if(result.getCount() == 0){
+                    return;
+                }
+                StringBuffer buffer = new StringBuffer();
+                while (result.moveToNext()) {
+                    buffer.append ("Name :"+ result.getString(1));
+                }
+
                 Intent intent = new Intent(HomeActivity.this, ExistingCustomer.class);
                 startActivity(intent);
 
@@ -129,6 +144,8 @@ public class HomeActivity extends AppCompatActivity {
 
         }
     }
+
+
 
     }
 
