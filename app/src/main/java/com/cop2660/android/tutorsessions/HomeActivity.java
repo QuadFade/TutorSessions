@@ -47,10 +47,10 @@ public class HomeActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_home);
         setHasOptionsMenu(true);
-        TextView e = (TextView) findViewById(R.id.email_address);
-        Bundle bu;
-        bu = getIntent().getExtras();
-        e.setText(bu.getString("emailReci"));
+//        TextView e = (TextView) findViewById(R.id.email_address);
+//        Bundle bu;
+//        bu = getIntent().getExtras();
+     //   e.setText(bu.getString("emailReci"));
 
 
         customerDBView = new DatabaseHelper(this);
@@ -113,11 +113,11 @@ public class HomeActivity extends AppCompatActivity {
     @Override
     protected void onResume() {
         super.onResume();
-        setHasOptionsMenu(true);
-        TextView e = (TextView) findViewById(R.id.email_address);
-        Bundle bu;
-        bu = getIntent().getExtras();
-        e.setText(bu.getString("emailReci"));
+         setHasOptionsMenu(true);
+//        TextView e = (TextView) findViewById(R.id.email_address);
+//        Bundle bu;
+//        bu = getIntent().getExtras();
+//        e.setText(bu.getString("emailReci"));
     }
 
     private void setHasOptionsMenu(boolean b) {

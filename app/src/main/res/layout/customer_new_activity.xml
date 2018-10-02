@@ -14,10 +14,11 @@
         android:layout_marginTop="8dp"
         android:text="Tap to Add Image"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toTopOf="parent"
+        android:onClick="callCamera"/>
 
     <EditText
-        android:id="@+id/newNameText"
+        android:id="@+id/nameTextView"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginBottom="8dp"
@@ -102,13 +103,13 @@
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.0"
-        app:layout_constraintStart_toEndOf="@+id/editText5" />
+        app:layout_constraintStart_toEndOf="@+id/zipcodeTextView" />
 
     <EditText
         android:id="@+id/newState"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginBottom="56dp"
+        android:layout_marginBottom="64dp"
         android:layout_marginEnd="8dp"
         android:layout_marginStart="8dp"
         android:ems="10"
@@ -171,11 +172,11 @@
     <CheckBox
         android:id="@+id/checkBox"
         android:layout_width="225dp"
-        android:layout_height="43dp"
-        android:layout_marginBottom="104dp"
-        android:layout_marginEnd="8dp"
+        android:layout_height="45dp"
         android:layout_marginStart="8dp"
         android:layout_marginTop="8dp"
+        android:layout_marginEnd="8dp"
+        android:layout_marginBottom="104dp"
         android:text="Auto-bill upon new session signup?"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
@@ -187,13 +188,15 @@
     <CheckBox
         android:id="@+id/checkBox2"
         android:layout_width="222dp"
-        android:layout_height="44dp"
-        android:layout_marginEnd="8dp"
+        android:layout_height="40dp"
         android:layout_marginStart="8dp"
+        android:layout_marginEnd="8dp"
+        android:layout_marginBottom="52dp"
         android:text="Opt-in for Emailed reciepts"
+        app:layout_constraintBottom_toBottomOf="@+id/btnSaveAll"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        tools:layout_editor_absoluteY="413dp" />
+        app:layout_constraintHorizontal_bias="0.493"
+        app:layout_constraintStart_toStartOf="parent" />
 
     <fragment
         android:id="@+id/fragment"

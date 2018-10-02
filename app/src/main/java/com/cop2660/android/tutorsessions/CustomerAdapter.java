@@ -11,7 +11,9 @@ import java.util.List;
 
 public class CustomerAdapter extends ArrayAdapter {
     List list = new ArrayList<>();
-    public CustomerAdapter(@NonNull Context context, int resource) {
+
+
+    public CustomerAdapter(Context context, int resource) {
         super(context, resource);
     }
 

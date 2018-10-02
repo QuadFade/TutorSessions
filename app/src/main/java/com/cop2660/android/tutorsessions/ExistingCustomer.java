@@ -4,6 +4,9 @@ import android.content.Context;
 import android.content.Intent;
 import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
+import android.support.v4.app.Fragment;
+import android.support.v4.app.FragmentManager;
+import android.support.v4.app.FragmentTransaction;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.support.v7.widget.LinearLayoutManager;
@@ -24,15 +27,15 @@ import org.w3c.dom.Text;
 
 import java.util.ArrayList;
 
-public class ExistingCustomer extends AppCompatActivity {
+public class ExistingCustomer extends AppCompatActivity implements MediatorInterface {
+
     //private Button mUpcomingSession;
 
     private ArrayList<String> mNames = new ArrayList<>();
     private ArrayList<String> mImages = new ArrayList<>();
     DatabaseHelper customerDBView;
-    TextView customerNameView;
-
-
+    TextView customerNameView, nameTextView, phoneNumberTextView;
+    Button customerDataViewer;
 
 
     @Override
@@ -41,11 +44,14 @@ public class ExistingCustomer extends AppCompatActivity {
         setContentView(R.layout.choosecustomerlist);
         customerDBView = new DatabaseHelper(this);
         customerNameView = (TextView) findViewById(R.id.customer_name);
+        //nameTextView = (TextView) findViewById(R.id.nameTextView);
+        phoneNumberTextView = (TextView) findViewById(R.id.phoneTextView);
 
         initImageBitmaps();
 
 
     }
+
     public boolean onCreateOptionsMenu(Menu menu) {
         MenuInflater inflater = getMenuInflater();
         inflater.inflate(R.menu.activity_home, menu);
@@ -66,49 +72,27 @@ public class ExistingCustomer extends AppCompatActivity {
         }
     }
 
-    private void initImageBitmaps(){
-        TextView e = (TextView) findViewById(R.id.customer_name_test);
+
+    private void initImageBitmaps() {
+        // TextView e = (TextView) findViewById(R.id.customer_name_test);
 
         Cursor result = customerDBView.getAllData();
-        //ArrayList<String> mNames = new ArrayList<>();
-        if(result.getCount() == 0){
-            Toast.makeText(this,"The Database was empty :(",Toast.LENGTH_LONG).show();
-        }else { if(result.getCount() != 0){
+        if (result.getCount() == 0) {
+            Toast.makeText(this, "The Database was empty :(", Toast.LENGTH_LONG).show();
+        } else {
+            if (result.getCount() != 0) {
 
-        }
+            }
+            while (result.moveToNext()) {
+                mNames.add(result.getString(1));
+                mImages.add(result.getString(1));
+            }
 
-        while (result.moveToNext()) {
-            mNames.add(result.getString(1));
-        }
         }
 
         initRecyclerView();
 
-//
-//
-//
-//        mNames.add("Name", buffer.toString());
-//
-//        //mImages.add("http://www.suttonsilver.co.uk/wp-content/uploads/blog-harold-02.jpg");
-//
-//        mNames.add("Hailey Coprp");
-//        //mImages.add("http://www.suttonsilver.co.uk/wp-content/uploads/blog-harold-02.jpg");
-//
-//        mNames.add("Jeepers Creeeps");
-//        //mImages.add("http://www.suttonsilver.co.uk/wp-content/uploads/blog-harold-02.jpg");
-//
-//        mNames.add("caloiys jones");
-//        //mImages.add("http://www.suttonsilver.co.uk/wp-content/uploads/blog-harold-02.jpg");
-//
-//        mNames.add("Whilds Joe");
-//        //mImages.add("http://www.suttonsilver.co.uk/wp-content/uploads/blog-harold-02.jpg");
-//
-//        mNames.add("Steven");
-
-
-
     }
-
 
 
     private void initRecyclerView() {
@@ -121,5 +105,28 @@ public class ExistingCustomer extends AppCompatActivity {
     }
 
 
+    public void userCustomerClick(int pos) {
+        DatabaseHelper dbHelper = new DatabaseHelper(this);
+        Fragment test = new Fragment();
+
+
+        if (pos != -1) {
+
+
+//            nameTextView = (TextView) findViewById(R.id.nameTextView);
+//
+//            String result = mNames.get(pos);
+//            nameTextView.setText(result);
+//            Toast.makeText(this, "Clicked Customer : " + mNames.get(pos), Toast.LENGTH_LONG).show();
+            setContentView(R.layout.customer_existing_activity);
+
+
+           // Intent intent = new Intent(this, ExistingCustomerFragment.class);
+            //startActivity(intent);
+            // Toast.makeText(this, "Clicked Customer : " + mNames.get(pos),Toast.LENGTH_LONG).show();
+        }
+
+    }
 }
+
 
